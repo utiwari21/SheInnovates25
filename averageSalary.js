@@ -27,7 +27,7 @@ async function getMedianSalary(state, city) {
 }
 
 // Example usage
-getMedianSalary("Alabama", "Mobile")
+getMedianSalary("South Dakota", "Brookings")
   .then((salary) => {
     if (salary !== null) {
       console.log(`The median salary is: ${salary}`);

@@ -6,7 +6,7 @@ Alabama,Columbus,111370
 Alabama,Daphne-Fairhope-Foley,101050
 Alabama,Decatur,114910
 Alabama,Dothan,90850
-Alabama,Florence-Muscle Shoals,90440
+Alabama,Florence-Muscle-Shoals,90440
 Alabama,Huntsville,120260
 Alabama,Mobile,105530
 Alabama,Montgomery,100350
@@ -58,31 +58,358 @@ Colorado,Fort-Collins,128170
 Colorado,Grand-Junction,117890
 Colorado,Greeley,129550
 Colorado,Pueblo,116140
-Connecticut,Bridgeport-Stamford-Norwalk,
-Connecticut,Danbury,
-Connecticut,Hartford,
-Connecticut,New-Haven,
-Connecticut,Norwich-New-London-Westerly
-Connecticut,Springfield
-Delaware,Dover
-Delaware,Philadelphia-Camden-Wilmington
-Delaware,Salisbury
-District of Columbia,Washington-Arlington-Alexandria
-Florida,Cape-Coral-Fort-Myers
-Florida,Crestview-Fort-Walton-Beach-Destin
-Florida,Deltona-Daytona Beach-Ormond-Beach
-Florida,Gainesville
-Florida,Homosassa-Springs
-Florida,Jacksonville
-Florida,Lakeland-Winter-Haven
-Florida,Miami-Fort-Lauderdale-West-Palm-Beach
-Florida,Naples-Immokalee-Marco-Island
-Florida,North-Port-Sarasota-Bradenton
-Florida,Ocala
-Florida,Orlando-Kissimmee-Sanford
-Florida,Palm-Bay-Melbourne-Titusville
-Florida,Panama-City
-Florida,Pensacola-Ferry-Pass-Brent
-Florida,Port-St.-Lucie
-Florida,Punta-Gorda
-Florida,Sebastian-Vero-Beach
+Connecticut,Bridgeport-Stamford-Norwalk,141690
+Connecticut,Danbury,127040
+Connecticut,Hartford,124980
+Connecticut,New-Haven,123000
+Connecticut,Norwich-New-London-Westerly,119010
+Connecticut,Springfield,117900
+Delaware,Dover,115910
+Delaware,Philadelphia-Camden-Wilmington,125850
+Delaware,Salisbury,127150
+District of Columbia,Washington-Arlington-Alexandria,148480
+Florida,Cape-Coral-Fort-Myers,115160
+Florida,Crestview-Fort-Walton-Beach-Destin,118340
+Florida,Deltona-Daytona-Beach-Ormond-Beach,109920
+Florida,Gainesville,96580
+Florida,Homosassa-Springs,117750
+Florida,Jacksonville,118560
+Florida,Lakeland-Winter-Haven,109240
+Florida,Miami-Fort-Lauderdale-West-Palm-Beach,125700
+Florida,Naples-Immokalee-Marco-Island,121080
+Florida,North-Port-Sarasota-Bradenton,119340
+Florida,Ocala,112750
+Florida,Orlando-Kissimmee-Sanford,116600
+Florida,Palm-Bay-Melbourne-Titusville,126200
+Florida,Panama-City,107280
+Florida,Pensacola-Ferry-Pass-Brent,103790
+Florida,Port-St.-Lucie,113530
+Florida,Punta-Gorda,120160
+Florida,Sebastian-Vero-Beach,110040
+Florida,Tallahassee,97020
+Florida,Tampa-St.-Petersburg-Clearwater,117010
+Florida,The-Villages,103680
+Georgia,Athens-Clarke-County,99530
+Georgia,Atlanta-Sandy-Springs-Roswell,127720
+Georgia,Augusta-Richmond-County,116830
+Georgia,Brunswick,112200
+Georgia,Chattanooga,107290
+Georgia,Columbus,111370
+Georgia,Dalton,103830
+Georgia,Gainesville,121070
+Georgia,Macon,117090
+Georgia,Rome,117330
+Georgia,Savannah,111870
+Georgia,Valdosta,100730
+Georgia,Warner-Robins,110900
+Hawaii,Kahului-Wailuku-Lahaina
+Hawaii,Urban-Honolulu
+Idaho,Boise-City
+Idaho,Coeur-d'Alene
+Idaho,Idaho-Falls
+Idaho,Lewiston
+Idaho,Logan
+Idaho,Pocatello
+Idaho,Twin-Falls
+Illinois,Bloomington
+Illinois,Cape-Girardeau
+Illinois,Carbondale-Marion
+Illinois,Champaign-Urbana
+Illinois,Chicago-Naperville-Elgin
+Illinois,Danville
+Illinois,Davenport-Moline-Rock-Island
+Illinois,Decatur
+Illinois,Kankakee
+Illinois,Peoria
+Illinois,Rockford
+Illinois,St.-Louis
+Illinois,Springfield
+Indiana,Bloomington
+Indiana,Chicago-Naperville-Elgin
+Indiana,Cincinnati
+Indiana,Columbus
+Indiana,Elkhart-Goshen
+Indiana,Evansville
+Indiana,Fort-Wayne
+Indiana,Indianapolis-Carmel-Anderson
+Indiana,Kokomo
+Indiana,Lafayette-West-Lafayette
+Indiana,Louisville
+Indiana,Michigan-City-La-Porte
+Indiana,Muncie
+Indiana,South-Bend-Mishawaka
+Indiana,Terre-Haute
+Iowa,Ames
+Iowa,Cedar-Rapids
+Iowa,Davenport-Moline-Rock-Island
+Iowa,Des-Moines-West-Des-Moines
+Iowa,Dubuque
+Iowa,Iowa-City
+Iowa,Omaha-Council-Bluffs
+Iowa,Sioux-City
+Iowa,Waterloo-Cedar-Falls
+Kansas,Kansas-City
+Kansas,Lawrence
+Kansas,Manhattan
+Kansas,St.-Joseph
+Kansas,Topeka
+Kansas,Wichita
+Kentucky,Bowling-Green
+Kentucky,Cincinnati
+Kentucky,Clarksville
+Kentucky,Elizabethtown-Fort-Knox
+Kentucky,Evansville
+Kentucky,Huntington-Ashland
+Kentucky,Lexington-Fayette
+Kentucky,Louisville
+Kentucky,Owensboro
+Louisiana,Alexandria
+Louisiana,Baton-Rouge
+Louisiana,Hammond
+Louisiana,Houma-Thibodaux
+Louisiana,Lafayette
+Louisiana,Lake-Charles
+Louisiana,Monroe
+Louisiana,New-Orleans-Metairie
+Louisiana,Shreveport-Bossier-City
+Maine,Bangor
+Maine,Dover-Durham
+Maine,Lewiston-Auburn
+Maine,Portland-South-Portland
+Maine,Portsmouth
+Maryland,Baltimore-Columbia-Towson
+Maryland,California-Lexington-Park
+Maryland,Cumberland
+Maryland,Hagerstown-Martinsburg
+Maryland,Philadelphia-Camden-Wilmington
+Maryland,Salisbury
+Maryland,Washington-Arlington-Alexandria
+Massachusetts,Barnstable-Town
+Massachusetts,Boston-Cambridge-Nashua
+Massachusetts,Leominster-Gardner
+Massachusetts,New-Bedford
+Massachusetts,Pittsfield
+Massachusetts,Providence-Warwick
+Massachusetts,Springfield
+Massachusetts,Worcester
+Michigan,Ann-Arbor
+Michigan,Battle-Creek
+Michigan,Bay-City
+Michigan,Detroit-Warren-Dearborn
+Michigan,Flint
+Michigan,Grand-Rapids-Wyoming
+Michigan,Jackson
+Michigan,Kalamazoo-Portage
+Michigan,Lansing-East-Lansing
+Michigan,Midland
+Michigan,Monroe
+Michigan,Muskegon
+Michigan,Niles-Benton-Harbor
+Michigan,Saginaw
+Michigan,South-Bend-Mishawaka
+Minnesota,Duluth
+Minnesota,Fargo
+Minnesota,Grand-Forks
+Minnesota,La-Crosse-Onalaska
+Minnesota,Mankato-North-Mankato
+Minnesota,Minneapolis-St.-Paul-Bloomington
+Minnesota,Rochester
+Minnesota,St.-Cloud
+Mississippi,Gulfport-Biloxi-Pascagoula
+Mississippi,Hattiesburg
+Mississippi,Jackson
+Mississippi,Memphis
+Missouri,Cape-Girardeau
+Missouri,Columbia
+Missouri,Fayetteville-Springdale-Rogers
+Missouri,Jefferson-City
+Missouri,Joplin
+Missouri,Kansas-City
+Missouri,St.-Joseph
+Missouri,St.-Louis
+Missouri,Springfield
+Montana,Billings
+Montana,Great-Falls
+Montana,Missoula
+Nebraska,Grand-Island
+Nebraska,Lincoln
+Nebraska,Omaha-Council-Bluffs
+Nebraska,Sioux-City
+Nevada,Carson-City
+Nevada,Las-Vegas-Henderson-Paradise
+Nevada,Reno
+New Hampshire,Boston-Cambridge-Nashua
+New Hampshire,Dover-Durham
+New Hampshire,Manchester
+New Hampshire,Portsmouth
+New Jersey,Allentown-Bethlehem-Easton
+New Jersey,Atlantic-City-Hammonton
+New Jersey,New-York-Newark-Jersey-City
+New Jersey,Ocean-City
+New Jersey,Philadelphia-Camden-Wilmington
+New Jersey,Trenton
+New Jersey,Vineland-Bridgeton
+New Mexico,Albuquerque
+New Mexico,Farmington
+New Mexico,Las-Cruces
+New Mexico,Santa-Fe
+New York,Albany-Schenectady-Troy
+New York,Binghamton
+New York,Buffalo-Cheektowaga-Niagara-Falls
+New York,Elmira
+New York,Glens-Falls
+New York,Ithaca
+New York,Kingston
+New York,New-York-Newark-Jersey-City
+New York,Rochester
+New York,Syracuse
+New York,Utica-Rome
+New York,Watertown-Fort-Drum
+North Carolina,Asheville
+North Carolina,Burlington
+North Carolina,Charlotte-Concord-Gastonia
+North Carolina,Durham-Chapel-Hill
+North Carolina,Fayetteville
+North Carolina,Goldsboro
+North Carolina,Greensboro-High-Point
+North Carolina,Greenville
+North Carolina,Hickory-Lenoir-Morganton
+North Carolina,Jacksonville
+North Carolina,Myrtle-Beach-Conway-North-Myrtle-Beach
+North Carolina,New-Bern
+North Carolina,Raleigh
+North Carolina,Rocky-Mount
+North Carolina,Virginia-Beach-Norfolk-Newport-News
+North Carolina,Wilmington
+North Carolina,Winston-Salem
+North Dakota,Bismarck
+North Dakota,Fargo
+North Dakota,Grand-Forks
+North Dakota,Minot
+Ohio,Akron
+Ohio,Cincinnati
+Ohio,Cleveland-Elyria
+Ohio,Columbus
+Ohio,Dayton
+Ohio,Mansfield
+Ohio,Toledo
+Ohio,Youngstown-Warren-Boardman
+Oklahoma,Enid
+Oklahoma,Lawton
+Oklahoma,Oklahoma-City
+Oklahoma,Stillwater
+Oklahoma,Tulsa
+Oregon,Bend
+Oregon,Eugene
+Oregon,Medford
+Oregon,Portland-Vancouver-Hillsboro
+Oregon,Salem
+Pennsylvania,Allentown-Bethlehem-Easton
+Pennsylvania,Altoona
+Pennsylvania,Chambersburg-Waynesboro
+Pennsylvania,Erie
+Pennsylvania,Harrisburg-Carlisle
+Pennsylvania,Johnstown
+Pennsylvania,Lancaster
+Pennsylvania,Lebanon
+Pennsylvania,Philadelphia-Camden-Wilmington
+Pennsylvania,Pittsburgh
+Pennsylvania,Reading
+Pennsylvania,Scranton--Wilkes-Barre--Hazleton
+Pennsylvania,State-College
+Pennsylvania,York-Hanover
+Rhode Island,Providence-Warwick
+Rhode Island,Warwick
+South Carolina,Charleston-North-Charleston
+South Carolina,Columbia
+South Carolina,Florence
+South Carolina,Greenville-Anderson-Mauldin
+South Carolina,Hilton-Head-Island-Bluffton-Beaufort
+South Carolina,Myrtle-Beach-Conway-North-Myrtle-Beach
+South Carolina,Spartanburg
+South Dakota,Aberdeen
+South Dakota,Brookings,
+South Dakota,Huron
+South Dakota,Sioux-Falls
+South Dakota,Yankton
+Tennesee,Chattanooga
+Tennessee,Clarksville
+Tennessee,Jackson
+Tennessee,Johnson-City
+Tennessee,Kingsport-Bristol-Bristol
+Tennessee,Knoxville
+Tennessee,Memphis
+Tennessee,Nashville-Davidson-Murfreesboro-Franklin
+Texas,Abilene
+Texas,Amarillo
+Texas,Austin-Round-Rock
+Texas,Beaumont-Port-Arthur
+Texas,Brownsville-Harlingen
+Texas,College-Station-Bryan
+Texas,Dallas-Fort-Worth-Arlington
+Texas,El-Paso
+Texas,Harlingen
+Texas,Houston-The-Woodlands-Sugar-Land
+Texas,Killeen-Fort-Hood
+Texas,Laredo
+Texas,Lubbock
+Texas,McAllen-Edinburg-Mission
+Texas,Midland
+Texas,San-Angelo
+Texas,San-Antonio-New-Braunfels
+Texas,Sherman-Denison
+Texas,Tyler
+Texas,Waco
+Texas,Wichita-Falls
+Utah,Logan
+Utah,Ogden-Clearfield
+Utah,Provo-Orem
+Utah,Salt-Lake-City
+Utah,St.-George
+Utah,Tooele
+Vermont,Burlington-South-Burlington
+Vermont,Montpelier
+Virginia,Blacksburg-Christiansburg-Radford
+Virginia,Charlottesville
+Virginia,Chesapeake
+Virginia,Harrisonburg
+Virginia,Lynchburg
+Virginia,Norfolk-Virginia-Beach-Newport-News
+Virginia,Richmond
+Virginia,Roanoke
+Virginia,Virginia-Beach-Norfolk-Newport-News
+Virginia,Washington-Arlington-Alexandria
+Washington,Bellingham
+Washington,Bremerton-Silverdale
+Washington,Kennewick-Richland
+Washington,Olympia
+Washington,Seattle-Tacoma-Bellevue
+Washington,Spokane-Spokane-Valley
+Washington,Tri-Cities
+Washington,Vancouver
+Washington,Wenatchee
+Washington,Yakima
+West Virginia,Charleston
+West Virginia,Clarksburg
+West Virginia,Huntington-Ashland
+West Virginia,Morgantown
+West Virginia,Parkersburg-Vienna
+West Virginia,Wheeling
+Wisconsin,Appleton
+Wisconsin,Eau-Claire
+Wisconsin,Green-Bay
+Wisconsin,Janesville-Beloit
+Wisconsin,Kenosha
+Wisconsin,La-Crosse-Onalaska
+Wisconsin,Madison
+Wisconsin,Milwaukee-Waukesha-West-Allis
+Wisconsin,Oshkosh-Neenah
+Wisconsin,Racine
+Wisconsin,Sheboygan
+Wisconsin,Wausau
+Wisconsin,Wausau-Stevens-Point
+Wyoming,Casper
+Wyoming,Cheyenne
+Wyoming,Gillette
+Wyoming,Laramie
+Wyoming,Rock-Springs
