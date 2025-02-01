@@ -1,8 +1,8 @@
 import axios from 'axios'; // Use 'import' for consistency with React
 
 // Function to call the Gemini API
-const analyzeDream = async (dreamText) => {
-  const apiKey = 'AIzaSyBPkKT5lczvRzwVS3B-dDyc_tPggJg3DxE';
+const analyzeDream = async (state, role) => {
+  const apiKey = 'AIzaSyDxQ2Dlk1ld9TUEbTX5-qxdMntqbj6qMP8';  // Your actual API key
   const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
 
   const data = {
@@ -10,7 +10,7 @@ const analyzeDream = async (dreamText) => {
       {
         parts: [
           {
-            text: 'I had a dream. Here it is: '+dreamText+'So, tell me, what does this mean psychologically? Also, make sure to respond WITH NO ASTRIEKS', // Use the prompt text passed to this function
+            text: 'Tell me the median salary of '+role+' for the state of '+state+ '. Feel free to search the web and tell me the answer', // Use the prompt text passed to this function
           },
         ],
       },
@@ -24,18 +24,21 @@ const analyzeDream = async (dreamText) => {
       },
     });
 
-    // Debugging the full response to check structure
-    console.log('Full API Response:', response.data);
+    // Extract the actual dream analysis content
+    const content = response.data.candidates?.[0]?.content?.parts?.[0]?.text;
 
-    // Safely extract the text from the response
-    const contentText = response.data.candidates[0]?.content?.parts[0]?.text;
-    
-    // If content is found, return it, otherwise return a default message
-    return contentText || "No content returned"; 
+    if (content) {
+      console.log(content); // Print the content once
+    } else {
+      console.log("No content available in the response.");
+    }
 
   } catch (error) {
-    throw new Error(`API error: ${error.message}`);
+    console.error(`API error: ${error.message}`);
   }
 };
+
+// Example usage
+analyzeDream("Pennsylvania", "Software Engineering");
 
 export default analyzeDream;
