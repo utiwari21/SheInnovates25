@@ -42,7 +42,7 @@ const Input = () => {
       <Navbar />
       {/* Title Section */}
       <div className="text-center py-10">
-        <h1 className="text-4xl font-bold text-blue-600">Resume Tailoring</h1>
+        <h1 className="text-4xl font-bold text-white">Resume Tailoring</h1>
         <hr className="my-6 w-full border-t-2 border-blue-600" />
       </div>
 
