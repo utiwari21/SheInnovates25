@@ -1,10 +1,12 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Navbar from "./NavBar";
-import { medSalary } from "./Input";
 
 function Output() {
   const navigate = useNavigate();
+  const location = useLocation(); // Use location to access state passed from Input.jsx
+
+  const expectedSalary = location.state ? location.state.expectedSalary : null; // Get expected salary from state
 
   return (
     <div className="bg-orange-500 text-blue-600">
@@ -32,7 +34,9 @@ function Output() {
           className="border-2 border-blue-500 p-2 w-2/3 sm:w-1/3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-300 mx-auto"
           contentEditable={true}
           placeholder="Enter your expected salary here..."
-        ></div>
+        >
+          {expectedSalary ? `$${expectedSalary}` : "No salary data available"}
+        </div>
       </div>
 
       {/* Resume ID Section */}

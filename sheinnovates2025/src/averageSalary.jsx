@@ -1,29 +1,42 @@
-import fs from "fs";
-import csv from "csv-parser";
+import Papa from "papaparse";
 
-// Read the CSV file and store the data in an array
-function readCSV(filePath) {
+// Function to read and parse the CSV file (this will work in the browser)
+async function readCSV(filePath) {
+  const response = await fetch(filePath); // Fetch the CSV file
+  const csvText = await response.text(); // Get the text content of the CSV file
+
   return new Promise((resolve, reject) => {
-    const data = [];
-    fs.createReadStream(filePath)
-      .pipe(csv())
-      .on("data", (row) => data.push(row))
-      .on("end", () => resolve(data))
-      .on("error", (err) => reject(err));
+    // Use Papaparse to parse the CSV data
+    Papa.parse(csvText, {
+      header: true,
+      skipEmptyLines: true,
+      complete: (result) => {
+        resolve(result.data); // Resolves with the parsed data
+      },
+      error: (err) => {
+        reject(err); // Reject in case of an error
+      },
+    });
   });
 }
 
-// Function to get median salary for a given state and city
+// Function to get the median salary for a given state and city
 export async function getMedianSalary(state, city) {
-  const data = await readCSV("state_financials/state_financials.csv");
+  try {
+    const data = await readCSV("/state_financials.csv"); // Fetch and parse the CSV file
 
-  for (let row of data) {
-    if (row["State"] === state && row["City"] === city) {
-      return parseInt(row["Median-Salary"]);
+    // Iterate over the parsed data to find the matching state and city
+    for (let row of data) {
+      if (row["State"] === state && row["City"] === city) {
+        return parseInt(row["Median-Salary"], 10); // Return the median salary if found
+      }
     }
-  }
 
-  return null; // Return null if no data is found
+    return null; // Return null if no matching data is found
+  } catch (error) {
+    console.error("Error reading CSV file:", error);
+    return null; // Handle any errors gracefully
+  }
 }
 
 // Example usage

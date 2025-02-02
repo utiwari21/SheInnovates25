@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Papa from "papaparse"; // Import PapaParse for CSV parsing
 import Navbar from "./NavBar";
+import { useNavigate } from "react-router-dom";
+import { getMedianSalary } from "../averageSalary"; // Import the function
 
 const Input = () => {
   const [state, setState] = useState("");
   const [city, setCity] = useState("");
-  const [role, setRole] = useState("");
-  const [resume, setResume] = useState(null);
   const [data, setData] = useState([]); // Store CSV data
   const [filteredCities, setFilteredCities] = useState([]); // Store filtered cities
-
+  const [expectedSalary, setExpectedSalary] = useState(null); // Store the expected salary
+  const [resume, setResume] = useState(null); // Store the resume file
   const navigate = useNavigate();
 
   // Fetch and parse the CSV file
@@ -43,6 +43,25 @@ const Input = () => {
       .map((item) => item.City);
 
     setFilteredCities(citiesForState);
+  };
+
+  // Handle city change and fetch expected salary
+  const handleCityChange = async (e) => {
+    const selectedCity = e.target.value;
+    setCity(selectedCity);
+
+    if (state && selectedCity) {
+      const salary = await getMedianSalary(state, selectedCity);
+      setExpectedSalary(salary); // Set the expected salary
+    }
+  };
+
+  // Handle resume file change
+  const handleResumeChange = (e) => {
+    const file = e.target.files[0]; // Get the first file
+    if (file) {
+      setResume(file); // Set the resume file
+    }
   };
 
   return (
@@ -81,7 +100,7 @@ const Input = () => {
           id="city"
           className="p-2 border border-blue-500 rounded-lg"
           value={city}
-          onChange={(e) => setCity(e.target.value)}
+          onChange={handleCityChange} // Handle city change
           disabled={!state} // Disable if no state selected
         >
           <option value="">Select a city</option>
@@ -93,11 +112,26 @@ const Input = () => {
         </select>
       </div>
 
+      {/* Resume File Upload */}
+      <div className="text-center my-6">
+        <h3 className="text-xl text-blue-600 mb-4">Upload Your Resume</h3>
+        <input
+          type="file"
+          accept=".pdf, .doc, .docx"
+          onChange={handleResumeChange} // Handle file change
+          className="p-2 border border-blue-500 rounded-lg"
+        />
+      </div>
+
       {/* Submit Button */}
       <div className="text-center my-6">
         <button
           type="button"
-          onClick={() => navigate("/output")}
+          onClick={() =>
+            navigate("/output", {
+              state: { expectedSalary, resume },
+            })
+          }
           className="bg-blue-500 text-white px-6 py-3 rounded-lg text-xl hover:bg-blue-700 transition duration-300"
         >
           Submit
