@@ -22,6 +22,13 @@ function Output() {
     return Math.floor(Math.random() * 1000000000); // Generates a random ID like RES-123456789
   };
 
+  const formatResumeText = (text) => {
+    return text
+      .replace(/\*\*(.*?)\*\*/g, "<br/><br/><strong>$1</strong><br/><br/>") // Handles double asterisks
+      .replace(/ \* /g, "<br/>"); // Handles single asterisks with spaces before and after
+  };
+  
+
   useEffect(() => {
     // Set the random resume ID when the component mounts
     setResumeID(generateResumeID());
@@ -33,9 +40,15 @@ function Output() {
           "http://127.0.0.1:5000/get-extracted-text"
         );
         if (response.data.extracted_text) {
-          setProcessedResume(response.data.extracted_text);
+          //setProcessedResume(response.data.extracted_text);
+          const { GoogleGenerativeAI } = require("@google/generative-ai");
+          const genAI = new GoogleGenerativeAI("AIzaSyDxQ2Dlk1ld9TUEbTX5-qxdMntqbj6qMP8");
+          const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+          const prompt = "Resume Content: "+response.data.extracted_text+" Print the Resume Content WITHOUT any demographic bias. So, no name, or sex, or ethnicity, or anything that could bias the interviewer.";
+          const result = await model.generateContent(prompt);
+          setProcessedResume(result.response.text());
         } else {
-          setProcessedResume("No resume data available");
+          setProcessedResume("Loading...");
         }
       } catch (error) {
         console.error("Error fetching extracted text:", error);
@@ -72,18 +85,13 @@ function Output() {
         </h1>
         <hr className="w-full h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 border-0 rounded-full shadow-lg" />
       </div>
-
-      {/* Resume Summary */}
-      <div id="newSummary" className="text-center mt-8">
-        <h3 className="text-lg font-semibold mb-4">Resume Summary</h3>
-        <div
-          id="summary"
-          className="border-2 border-blue-500 p-2 w-2/3 sm:w-1/3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-300 mx-auto"
-          readOnly // Make salary non-editable
-        >
-          {processedResume ? processedResume : "No resume data available"}
-        </div>
-      </div>
+      <div
+  id="summary"
+  className="border-2 border-blue-500 p-2 w-full sm:w-1/3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-300 mx-auto"
+  dangerouslySetInnerHTML={{
+    __html: processedResume ? formatResumeText(processedResume) : "Loading...",
+  }}
+/>
 
       {/* Expected Salary Section */}
       <div id="salary_div" className="text-center mt-8">
