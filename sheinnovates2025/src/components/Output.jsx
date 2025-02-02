@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import Navbar from "./NavBar";
 
@@ -7,6 +7,22 @@ function Output() {
   const location = useLocation(); // Use location to access state passed from Input.jsx
 
   const expectedSalary = location.state ? location.state.expectedSalary : null; // Get expected salary from state
+
+  // Format the expected salary with commas
+  const formattedSalary = expectedSalary
+    ? new Intl.NumberFormat().format(expectedSalary)
+    : null;
+
+  // Generate a random resume ID
+  const generateResumeID = () => {
+    return Math.floor(Math.random() * 1000000000); // Generates a random ID like RES-123456789
+  };
+
+  const [resumeID, setResumeID] = useState("");
+
+  useEffect(() => {
+    setResumeID(generateResumeID()); // Set the random resume ID when the component mounts
+  }, []);
 
   return (
     <div className="bg-orange-500 text-blue-600">
@@ -32,10 +48,9 @@ function Output() {
         <div
           id="salary"
           className="border-2 border-blue-500 p-2 w-2/3 sm:w-1/3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-300 mx-auto"
-          contentEditable={true}
-          placeholder="Enter your expected salary here..."
+          readOnly // Make salary non-editable
         >
-          {expectedSalary ? `$${expectedSalary}` : "No salary data available"}
+          {formattedSalary ? `$${formattedSalary}` : "No salary data available"}
         </div>
       </div>
 
@@ -45,9 +60,10 @@ function Output() {
         <div
           id="id"
           className="border-2 border-blue-500 p-2 w-2/3 sm:w-1/3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-300 mx-auto"
-          contentEditable={true}
-          placeholder="Enter your resume ID here..."
-        ></div>
+          readOnly // Make resume ID non-editable
+        >
+          {resumeID}
+        </div>
       </div>
 
       <div id="back" className="text-center mt-8">
