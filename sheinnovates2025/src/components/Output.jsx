@@ -92,7 +92,7 @@ function Output() {
       </div>
       <div
         id="summary"
-        className="border-2 border-blue-500 p-2 w-full sm:w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-300 mx-auto"
+        className="border-2 border-blue-500 text-white p-2 w-full sm:w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-300 mx-auto"
         dangerouslySetInnerHTML={{
           __html: processedResume
             ? formatResumeText(processedResume)
