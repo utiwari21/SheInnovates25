@@ -35,7 +35,7 @@ const analyzeDream = async (pdfFile) => {
       {
         parts: [
           {
-            text: `Resume Content:\n${extractedText}\n\nNow, eliminate any sort of demographic information, from the resume content, that could categorize the candidate. For example, name, race, sex, etc.`,
+            text: `Resume Content:\n${extractedText}\n\nNow, eliminate any sort of demographic information, from the resume content, that could categorize the candidate. For example, name, race, sex, etc. Remove the contact information as well, but keep the phone number only.`,
           },
         ],
       },

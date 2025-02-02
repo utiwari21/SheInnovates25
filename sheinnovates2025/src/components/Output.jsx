@@ -25,9 +25,9 @@ function Output() {
   const formatResumeText = (text) => {
     return text
       .replace(/\*\*(.*?)\*\*/g, "<br/><br/><strong>$1</strong><br/><br/>") // Handles double asterisks
-      .replace(/ \* /g, "<br/>"); // Handles single asterisks with spaces before and after
+      .replace(/\n\* /g, "<br/>• ") // Handles bullet points starting with "* " at the beginning of a line
+      .replace(/\* /g, "<br/>• "); // Handles single asterisks with a space after
   };
-  
 
   useEffect(() => {
     // Set the random resume ID when the component mounts
@@ -42,9 +42,14 @@ function Output() {
         if (response.data.extracted_text) {
           //setProcessedResume(response.data.extracted_text);
           const { GoogleGenerativeAI } = require("@google/generative-ai");
-          const genAI = new GoogleGenerativeAI("AIzaSyDxQ2Dlk1ld9TUEbTX5-qxdMntqbj6qMP8");
+          const genAI = new GoogleGenerativeAI(
+            "AIzaSyDxQ2Dlk1ld9TUEbTX5-qxdMntqbj6qMP8"
+          );
           const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-          const prompt = "Resume Content: "+response.data.extracted_text+" Print the Resume Content WITHOUT any demographic bias. So, no name, or sex, or ethnicity, or anything that could bias the interviewer.";
+          const prompt =
+            "Resume Content: " +
+            response.data.extracted_text +
+            " Print the Resume Content WITHOUT any demographic bias. So, no name, or sex, or ethnicity, or anything that could bias the interviewer.";
           const result = await model.generateContent(prompt);
           setProcessedResume(result.response.text());
         } else {
@@ -86,12 +91,14 @@ function Output() {
         <hr className="w-full h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 border-0 rounded-full shadow-lg" />
       </div>
       <div
-  id="summary"
-  className="border-2 border-blue-500 p-2 w-full sm:w-1/3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-300 mx-auto"
-  dangerouslySetInnerHTML={{
-    __html: processedResume ? formatResumeText(processedResume) : "Loading...",
-  }}
-/>
+        id="summary"
+        className="border-2 border-blue-500 text-white p-2 w-full sm:w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-300 mx-auto"
+        dangerouslySetInnerHTML={{
+          __html: processedResume
+            ? formatResumeText(processedResume)
+            : "Loading...",
+        }}
+      />
 
       {/* Expected Salary Section */}
       <div id="salary_div" className="text-center mt-8">
