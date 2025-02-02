@@ -10,6 +10,16 @@ function Navbar() {
             SkillMatch
           </Link>
         </div>
+        {/* Centered Logo */}
+        <div className="flex-shrink-0 ml-10">
+          <Link to="/">
+            <img
+              src="/SkillMatch_logo.png"
+              alt="SkillMatch AI Logo"
+              className="h-14"
+            />
+          </Link>
+        </div>
         <div className="space-x-4">
           <Link
             to="/"

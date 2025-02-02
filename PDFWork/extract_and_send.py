@@ -18,7 +18,8 @@ def extract_text_from_pdf(pdf_path):
 # API Route to serve extracted text
 @app.route('/get-extracted-text', methods=['GET'])
 def get_extracted_text():
-    pdf_path = r"C:\Users\tiwar\SheInnovates25\SheInnovates25\PDFWork\Utkarsh Resume .pdf"
+    relative_path = "PDFWork\Utkarsh Resume .pdf"
+    pdf_path = r"PDFWork/Utkarsh Resume"
     extracted_text = extract_text_from_pdf(pdf_path)
     
     if extracted_text:
