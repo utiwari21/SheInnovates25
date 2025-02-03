@@ -3,7 +3,7 @@ import axios from 'axios';
 // Function to upload the resume PDF to the Flask backend
 const uploadPDF = async (pdfFile) => {
   const formData = new FormData();
-  formData.append('pdf', pdfFile); // Ensure the key matches your backend code
+  formData.append('pdf', pdfFile); // Ensure the key matches backend code
 
   try {
     const response = await axios.post('http://127.0.0.1:5000/upload-pdf', formData, {
@@ -35,7 +35,7 @@ const analyzeDream = async (pdfFile) => {
       {
         parts: [
           {
-            text: `Resume Content:\n${extractedText}\n\nNow, eliminate any sort of demographic information, from the resume content, that could categorize the candidate. For example, name, race, sex, etc. Remove the email, linkedin, github, and any other account that could verify the user, but keep the phone number only.`,
+            text: `Assume the role of resume checker. There are many biases in the coroporate world regarding hiring new employees. You want to get rid of that. So here's a resume of a candidate: \n${extractedText}\n\nNow, eliminate any sort of demographic information, from the resume content, that could categorize the candidate. For example, name, race, sex, etc. Remove the email, linkedin url, github url, and any other urls that could verify the user, but keep the phone number intact.`,
           },
         ],
       },
