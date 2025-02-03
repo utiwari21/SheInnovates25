@@ -13,7 +13,6 @@ app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 # Ensure the PDFWork directory exists
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-
 # Function to extract text from a PDF
 def extract_text_from_pdf(pdf_path):
     text = ""
